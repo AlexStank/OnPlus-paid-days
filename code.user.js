@@ -16,7 +16,7 @@
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             let parser = new DOMParser(),
-                setDOM = parser.parseFromString(request.responseText, 'text/html'),
+                sentDOM = parser.parseFromString(request.responseText, 'text/html'),
                 cost = sentDOM.querySelector('tr.boxline > td:nth-child(1)').innerHTML,
                 paidDays = Math.ceil(balance.replace(',', '.')/cost.replace(',', '.')*30);
 
